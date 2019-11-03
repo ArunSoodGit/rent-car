@@ -1,0 +1,10 @@
+<div class="all">
+  <div class="one" *ngFor="let car of carList">
+    <div class="min"><img class="img" src="{{car.imageUrl}}"> </div>
+    <div>
+      Model:{{ car.model }}
+      Cena: {{ car.price }}
+      <button>rezerwuj</button>d
+    </div>
+  </div>
+</div>

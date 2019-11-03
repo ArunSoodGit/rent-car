@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [ngClass]="{'hidden': !(isHandset$ | async)}"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar >Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar  class="belka" color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async ">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div routerLink="/home">Logo</div>
+      <span class="example-spacer"></span>
+
+      <div class="m">
+
+      <mat-icon class="ikonki">drive_eta</mat-icon>
+      <button mat-button [matMenuTriggerFor]="flota">Nasza flota</button>
+      <span class="example-icon"></span>
+      <mat-icon class="ikonki">double_arrow</mat-icon>
+      <button mat-button routerLink="/rezerwacja">Zarezerwuj</button>
+      <span class="example-icon"></span>
+      <mat-icon class="ikonki">local_phone</mat-icon>
+      <button mat-button routerLink="/kontakt">Kontakt</button>
+      <span class="example-icon"></span>
+      <mat-icon class="ikonki">account_box</mat-icon>
+      <button mat-button routerLink="/logowanie">Logowanie</button>
+      <span class="example-icon"></span>
+      <mat-icon class="ikonki">settings</mat-icon>
+      <button mat-button routerLink="/ustawienia">Ustawienia</button>
+      </div>
+
+
+      <mat-menu #flota="matMenu">
+        <button mat-menu-item routerLink="/osobowe">Osobowe</button>
+        <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
+      </mat-menu>
+    </mat-toolbar>
+    <ng-content>
+
+    </ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
