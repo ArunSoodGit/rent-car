@@ -18,8 +18,7 @@ import { RezerwacjaComponent } from './rezerwacja/rezerwacja.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { LogowanieComponent } from './logowanie/logowanie.component';
 import { UstawieniaComponent } from './ustawienia/ustawienia.component';
-
-
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +40,9 @@ import { UstawieniaComponent } from './ustawienia/ustawienia.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
