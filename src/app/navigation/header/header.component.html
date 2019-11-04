@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/home" class>Logo</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <div class="m">
+
+        <mat-icon class="ikonki">drive_eta</mat-icon>
+        <a> <button mat-button [matMenuTriggerFor]="flota">Nasza flota</button> </a>
+        <span class="example-icon"></span>
+        <mat-icon class="ikonki">double_arrow</mat-icon>
+        <a><button mat-button routerLink="/rezerwacja">Zarezerwuj</button></a>
+        <span class="example-icon"></span>
+        <mat-icon class="ikonki">local_phone</mat-icon>
+        <a><button mat-button routerLink="/kontakt">Kontakt</button></a>
+        <span class="example-icon"></span>
+        <mat-icon class="ikonki">account_box</mat-icon>
+        <a><button mat-button routerLink="/logowanie">Logowanie</button></a>
+        <span class="example-icon"></span>
+        <mat-icon class="ikonki">settings</mat-icon>
+        <a><button mat-button routerLink="/ustawienia">Ustawienia</button></a>
+      </div>
+
+
+      <mat-menu #flota="matMenu">
+        <button mat-menu-item routerLink="/osobowe">Osobowe</button>
+        <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
+      </mat-menu>
+    </ul>
+  </div>
+</mat-toolbar>

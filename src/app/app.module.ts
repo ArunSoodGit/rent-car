@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -19,17 +18,24 @@ import { KontaktComponent } from './kontakt/kontakt.component';
 import { LogowanieComponent } from './logowanie/logowanie.component';
 import { UstawieniaComponent } from './ustawienia/ustawienia.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { LayoutComponent } from './layout/layout.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     HomeComponent,
     OsoboweComponent,
     OsoboweListaComponent,
     RezerwacjaComponent,
     KontaktComponent,
     LogowanieComponent,
-    UstawieniaComponent
+    UstawieniaComponent,
+    LayoutComponent,
+    HeaderComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     MatListModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexLayoutModule,
+    MatButtonModule
 
   ],
   providers: [],
