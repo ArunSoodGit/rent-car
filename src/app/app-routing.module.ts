@@ -6,6 +6,7 @@ import { RezerwacjaComponent } from './rezerwacja/rezerwacja.component';
 import { LogowanieComponent } from './logowanie/logowanie.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { UstawieniaComponent } from './ustawienia/ustawienia.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
 {
   path: 'osobowe',
   component: OsoboweComponent
+},
+{
+  path: 'car/:id',
+  component: CarDetailComponent
 },
 {
   path: 'logowanie',

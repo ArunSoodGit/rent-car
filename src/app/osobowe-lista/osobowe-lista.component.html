@@ -1,10 +1,10 @@
-<div class="all">
-  <div class="one" *ngFor="let car of carList">
-    <img  src="{{car.imageUrl}}" width=220 height=117 >
-    <div>
-      Model:{{ car.model }}
-      Cena: {{ car.price }}
-      <button>rezerwuj</button>
-    </div>
-  </div>
+<div class="row">
+  <ul id="list">
+    <li *ngFor="let car of visibleImages">
+      <a [routerLink] = "['/car', car.id]">
+      <div>{{car.id}}, {{car.model}} </div>
+        <img src="{{car.imageUrl}}" class="tn" width="220" height="117">
+      </a>
+    </li>
+  </ul>
 </div>

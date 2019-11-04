@@ -22,6 +22,9 @@ import { LayoutComponent } from './layout/layout.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { ImageService } from './image/shared/image.service';
+import { CarDetailComponent } from './car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     UstawieniaComponent,
     LayoutComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -49,10 +53,11 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     MatMenuModule,
     MatTabsModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
 
   ],
-  providers: [],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
