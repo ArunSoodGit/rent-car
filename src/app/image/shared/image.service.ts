@@ -1,5 +1,6 @@
 import {Injectable } from '@angular/core';
-import { Cars, CarsA, CarsB, CarsC, CarsD } from 'src/app/cars';
+import { Cars,  } from 'src/app/cars';
+import { Car } from 'rent-car/src/app/car';
 
 @Injectable()
 export class ImageService {
@@ -8,21 +9,24 @@ export class ImageService {
 
 
 visibleImages = [];
+visibleCars: Car[];
+
+i: number;
+
+getCars(grupa: string ) {
+  this.visibleCars = [];
+  for ( this.i = 0; this.i < Cars.length; this.i++) {
+    if ( Cars[this.i].grupa === grupa) {
+      this.visibleCars.push(Cars[this.i]);
+    }
+  }
+  return this.visibleCars;
+
+}
 getImages() {
   return this.visibleImages = Cars.slice(0);
 }
-getImagesA() {
-  return this.visibleImages = CarsA.slice(0);
-}
-getImagesB() {
-  return this.visibleImages = CarsB.slice(0);
-}
-getImagesC() {
-  return this.visibleImages = CarsC.slice(0);
-}
-getImagesD() {
-  return this.visibleImages = CarsD.slice(0);
-}
+
 getImage(id: number) {
   return Cars.slice(0).find(car => car.id === id );
 

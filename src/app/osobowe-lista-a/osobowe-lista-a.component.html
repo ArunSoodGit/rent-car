@@ -1,6 +1,6 @@
 <div class="row">
     <ul id="list">
-      <li *ngFor="let car of visibleImages">
+      <li *ngFor="let car of cars">
         <a [routerLink] = "['/car', car.id]">
           <img src="{{car.imageUrl}}" class="tn" width="220" height="117">
         </a>

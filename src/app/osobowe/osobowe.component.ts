@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-osobowe',
@@ -6,8 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./osobowe.component.scss']
 })
 export class OsoboweComponent implements OnInit {
+  @Input()
+label: string;
+label2: string;
+label3: string;
+label4: string;
+label5: string;
+label1: string;
+
 
   constructor() { }
+
+
 
 
   ngOnInit() {

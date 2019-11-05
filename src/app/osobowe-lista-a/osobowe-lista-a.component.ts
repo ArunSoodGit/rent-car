@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image/shared/image.service';
+import { Car } from 'rent-car/src/app/car';
 
 @Component({
   selector: 'app-osobowe-lista-a',
@@ -9,11 +10,13 @@ import { ImageService } from '../image/shared/image.service';
 export class OsoboweListaAComponent  {
 
 
-  visibleImages: any[] = [];
+  cars: any[] = [];
+ grupa = 'A';
 
   constructor(private imageService: ImageService) {
 
-    this.visibleImages = this.imageService.getImagesA();
+
+    this.cars = this.imageService.getCars(this.grupa);
    }
 
 }

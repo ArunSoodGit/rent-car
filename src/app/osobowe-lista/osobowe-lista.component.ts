@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Car } from '../car';
 import { Cars } from '../cars';
 import { ImageService } from '../image/shared/image.service';
@@ -8,6 +8,8 @@ import { ImageService } from '../image/shared/image.service';
   styleUrls: ['./osobowe-lista.component.scss']
 })
 export class OsoboweListaComponent  {
+
+
 
   visibleImages: any[] = [];
 

@@ -8,11 +8,12 @@ import { ImageService } from '../image/shared/image.service';
 })
 export class OsoboweListaDComponent {
 
-  visibleImages: any[] = [];
+  cars: any[]=[];
+  grupa = 'D';
 
   constructor(private imageService: ImageService) {
 
-    this.visibleImages = this.imageService.getImagesD();
+    this.cars = this.imageService.getCars(this.grupa);
    }
 
 
