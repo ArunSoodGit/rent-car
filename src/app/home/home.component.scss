@@ -1,14 +1,34 @@
+.bg{
+ background-image: url('/assets/img/bg.png') ;
+ background-size: cover;
+ background-position: center;
 
-section div p{
-    color: #3f51b5;
-    font-size: 30px;
-    text-shadow: 2px 3px 5px grey;
-    margin: 30px 0;
+ height: 400px;
+ color:white;
+ top: 64px;
 }
+h1{
+  text-align: center;
+}
+.rez{
+  background-color: black;
+  background-size: cover;
+  background-position: center;
 
-section div + p{
-    color: #3f51b5;
-    font-weight: bold;
-    font-size: 20px;
-    padding-bottom: 20px;
+
+  height: 200px;
+  width: 800px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+
+  opacity: 0.5;
+
+}
+.dalej{
+  background-color: black;
+
+ height: 600px;
+ color:white;
+ top: 64px;
 }

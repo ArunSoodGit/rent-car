@@ -9,6 +9,7 @@ export class OsoboweComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
   }
 

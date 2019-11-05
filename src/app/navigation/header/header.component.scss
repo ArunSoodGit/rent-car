@@ -1,10 +1,10 @@
 .mat-toolbar {
-  position: sticky;
+  position:fixed;
   top: 0;
   z-index: 1;
-  background-color: black;
-  color:white;
-  box-shadow: 3px 3px 3px #888888;
+  background-color: white;
+  color:black;
+  box-shadow: 0px 2px 5px #e6e4e4;
 
 
 }
@@ -28,6 +28,6 @@
   padding: 0 10px;
 }
 .a{
-  color: white;
+  color: black;
   text-decoration: none;
 }
