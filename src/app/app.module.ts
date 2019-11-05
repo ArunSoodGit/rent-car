@@ -25,6 +25,10 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ImageService } from './image/shared/image.service';
 import { CarDetailComponent } from './car-detail/car-detail.component';
+import { OsoboweListaAComponent } from './osobowe-lista-a/osobowe-lista-a.component';
+import { OsoboweListaBComponent } from './osobowe-lista-b/osobowe-lista-b.component';
+import { OsoboweListaCComponent } from './osobowe-lista-c/osobowe-lista-c.component';
+import { OsoboweListaDComponent } from './osobowe-lista-d/osobowe-lista-d.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { CarDetailComponent } from './car-detail/car-detail.component';
     LayoutComponent,
     HeaderComponent,
     SidenavListComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    OsoboweListaAComponent,
+    OsoboweListaBComponent,
+    OsoboweListaCComponent,
+    OsoboweListaDComponent
   ],
   imports: [
     BrowserModule,

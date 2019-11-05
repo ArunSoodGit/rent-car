@@ -2,9 +2,9 @@
   <ul id="list">
     <li *ngFor="let car of visibleImages">
       <a [routerLink] = "['/car', car.id]">
-      <div>{{car.id}}, {{car.model}} </div>
         <img src="{{car.imageUrl}}" class="tn" width="220" height="117">
       </a>
+      <div> {{car.model}}, <br> {{car.price +'zł/doba'}} </div>
     </li>
   </ul>
 </div>
