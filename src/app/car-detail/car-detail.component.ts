@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../image/shared/image.service';
-import {ActivatedRoute} from '@angular/router';
+
+
+
+import { getLocaleEraNames } from '@angular/common';
+import Car from '../car';
+import { Cars } from '../cars';
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -11,15 +17,28 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CarDetailComponent implements OnInit {
 
-  car: any;
+  car: Car;
 
 
-  constructor(private imageService: ImageService , private route: ActivatedRoute) { }
+  i: number;
+
+
+
+  constructor(  private route: ActivatedRoute) {
+
+
+   }
 
   ngOnInit() {
-    this.car = this.imageService.getImage(+this.route.snapshot.params['id']);
-  }
+
+    this.car = this.findCar(+this.route.snapshot.params['id']);
 
 }
 
+  findCar(id: number) {
+    return Cars.slice(0).find(car => car.id === id );
+  }
+
+
+}
 

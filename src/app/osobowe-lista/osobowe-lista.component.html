@@ -1,7 +1,7 @@
 <div class="row">
   <ul id="list">
-    <li *ngFor="let car of visibleImages">
-      <a [routerLink] = "['/car', car.id]">
+    <li *ngFor="let car of visibleCars">
+      <a [routerLink]="['/car', car.id]">
         <img src="{{car.imageUrl}}" class="tn" width="220" height="117">
       </a>
       <div class="napis"> {{car.model}}, <br> {{car.price +'zł/doba'}} </div>

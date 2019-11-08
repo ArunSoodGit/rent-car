@@ -1,10 +1,17 @@
-<div class="row">
-  <div class="col-md-12">
-    <div [ngStyle]="{'background-image':'url('+ car.imageUrl +')'}" class="img-container">
-
-      {{car.model}} <br>
-      {{car.price}}
-
-    </div>
-  </div>
-</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title> {{car.model}}</mat-card-title>
+    <mat-card-subtitle>{{car.price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="car.imageUrl" alt="Photo of a Shiba Inu" class="image">
+  <mat-card-content class="content">
+    <p>
+      super samochod
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button routerLink="/rezerwacja">REZERWUJ</button>
+    <button mat-button routerLink="/osobowe">POWRÓT</button>
+  </mat-card-actions>
+</mat-card>

@@ -23,12 +23,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { ImageService } from './image/shared/image.service';
 import { CarDetailComponent } from './car-detail/car-detail.component';
-import { OsoboweListaAComponent } from './osobowe-lista-a/osobowe-lista-a.component';
-import { OsoboweListaBComponent } from './osobowe-lista-b/osobowe-lista-b.component';
-import { OsoboweListaCComponent } from './osobowe-lista-c/osobowe-lista-c.component';
-import { OsoboweListaDComponent } from './osobowe-lista-d/osobowe-lista-d.component';
+import {MatCardModule} from '@angular/material/card';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +41,8 @@ import { OsoboweListaDComponent } from './osobowe-lista-d/osobowe-lista-d.compon
     HeaderComponent,
     SidenavListComponent,
     CarDetailComponent,
-    OsoboweListaAComponent,
-    OsoboweListaBComponent,
-    OsoboweListaCComponent,
-    OsoboweListaDComponent
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -62,10 +57,11 @@ import { OsoboweListaDComponent } from './osobowe-lista-d/osobowe-lista-d.compon
     MatTabsModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule
 
   ],
-  providers: [ImageService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
