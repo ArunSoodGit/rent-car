@@ -1,0 +1,19 @@
+<div *ngIf="!user" class="authBlock">
+  <h3>Zarejestruj się</h3>
+  <div class="formGroup">
+    <input type="text" class="formControl" placeholder="email" #userEmail required>
+  </div>
+
+  <div class="formGroup">
+    <input type="password" class="formControl" placeholder="Password" #userPassword required>
+  </div>
+
+  <!-- Calling SignIn Api from AuthService -->
+  <div class="formGroup">
+    <input type="button" class="btn btnPrimary" value="Zarejestruj"
+      (click)="service.register(userEmail.value, userPassword.value)">
+  </div>
+
+
+
+</div>

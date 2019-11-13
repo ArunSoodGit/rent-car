@@ -23,7 +23,7 @@ export class OsoboweListaComponent implements OnInit {
 
     }
 
-    changeCar(){
+    changeCar() {
       for ( this.i = 0; this.i < Cars.length; this.i++) {
         if ( Cars[this.i].grupa === this.grupa || this.grupa === 'all') {
           this.visibleCars.push(Cars[this.i]);

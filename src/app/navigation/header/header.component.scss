@@ -1,33 +1,41 @@
 .mat-toolbar {
   position:fixed;
-  top: 0;
-  z-index: 1;
+  top:0;
+  z-index: 2;
   background-color: white;
   color:black;
-  box-shadow: 0px 2px 5px #e6e4e4;
-
-
+  box-shadow: 10px 2px 5px #d3d0d0;
+  height: 70px;
 }
 
-.example-spacer{
-  flex: 1 1 auto;
-}
+
 .ikonki{
-
-  color: red;
-
-
-}
-.m{
-  margin: 3px;
-}
-  a:hover{
   color: red;
 }
-.example-icon {
-  padding: 0 10px;
+
+  .mat-button:hover{
+  color: red;
 }
+
 .a{
   color: black;
   text-decoration: none;
+  display: block;
+
+
 }
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+
+}
+li {
+  padding: 15px;
+  text-align: center;
+
+
+}
+

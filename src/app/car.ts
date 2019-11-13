@@ -4,4 +4,5 @@ export default class Car {
   price: string;
   imageUrl: string;
   grupa: string;
+  opis: string;
 }

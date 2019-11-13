@@ -3,35 +3,74 @@
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
+
   </div>
+
   <mat-icon class="ikonki">home</mat-icon>
-    <a routerLink="/home" class="a">Home</a>
+
+  <a routerLink="/home" class="a">Home</a>
 
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-      <div class="m">
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
 
+      <li>
         <mat-icon class="ikonki">drive_eta</mat-icon>
-        <a> <button mat-button [matMenuTriggerFor]="flota">Nasza flota</button> </a>
-        <span class="example-icon"></span>
+        <button mat-button [matMenuTriggerFor]="flota">Nasza flota</button>
+      </li>
+
+      <li>
         <mat-icon class="ikonki">double_arrow</mat-icon>
-        <a><button mat-button routerLink="/rezerwacja">Zarezerwuj</button></a>
-        <span class="example-icon"></span>
+        <button mat-button routerLink="/rezerwacja">Rezerwacja</button>
+      </li>
+
+      <li>
         <mat-icon class="ikonki">local_phone</mat-icon>
-        <a><button mat-button routerLink="/kontakt">Kontakt</button></a>
-        <span class="example-icon"></span>
+        <button mat-button routerLink="/kontakt">Kontakt</button>
+      </li>
+
+      <li *ngIf="!user">
         <mat-icon class="ikonki">account_box</mat-icon>
-        <a><button mat-button routerLink="/logowanie">Logowanie</button></a>
-        <span class="example-icon"></span>
+        <button mat-button routerLink="/login">Logowanie</button>
+      </li>
+
+
+      <li *ngIf="!user">
+        <mat-icon class="ikonki">account_box</mat-icon>
+        <button mat-button routerLink="/register">Rejestracja</button>
+      </li>
+
+      <li>
         <mat-icon class="ikonki">settings</mat-icon>
-        <a><button mat-button routerLink="/ustawienia">Ustawienia</button></a>
-      </div>
+        <button mat-button routerLink="/ustawienia">Ustawienia</button>
+      </li>
 
 
-      <mat-menu #flota="matMenu">
-        <button mat-menu-item routerLink="/osobowe">Osobowe</button>
-        <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
-      </mat-menu>
+
+      <li>
+        <button *ngIf="user" mat-mini-fab [matMenuTriggerFor]="avatarDropDown" class="toolbar-avatar"
+          [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">
+        </button>
+      </li>
+
+
+
     </ul>
   </div>
+
+
+  <mat-menu #avatarDropDown="matMenu">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ user?.displayName }}</mat-card-title>
+        <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
+      </mat-card-header>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>Wyloguj sie
+      </button>
+    </mat-card>
+  </mat-menu>
+  <mat-menu #flota="matMenu">
+    <button mat-menu-item routerLink="/osobowe">Osobowe</button>
+    <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
+  </mat-menu>
 </mat-toolbar>
