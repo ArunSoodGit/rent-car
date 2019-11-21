@@ -2,7 +2,7 @@ import Car from './car';
 
 export const Cars: Car[] = [
 
-  { id: 1, model: 'Volkswagen UP',   price: '200',   imageUrl:   'assets/img/up.png' , grupa: 'A' , opis: 'Skrzynia biegów:'},
+  { id: 1, model: 'Volkswagen Up',   price: '200',   imageUrl:   'assets/img/up.png' , grupa: 'A' , opis: 'Skrzynia biegów:'},
   { id: 2, model: 'Volkswagen Polo', price: '120',   imageUrl:   'assets/img/polo.png', grupa: 'B', opis: 'Skrzynia biegów:'  },
   { id: 3, model: 'Renault Clio' ,   price: '150',   imageUrl:   'assets/img/clio.png', grupa: 'B' , opis: 'Skrzynia biegów:'},
   { id: 4, model: 'Ford fiesta' ,   price: '150',   imageUrl:   'assets/img/fiesta.png', grupa: 'B' , opis: 'Skrzynia biegów:'},

@@ -5,17 +5,18 @@
   background-color: white;
   color:black;
   box-shadow: 10px 2px 5px #d3d0d0;
-  height: 70px;
+  height: 60px;
 }
 
 
 .ikonki{
-  color: red;
+  color: rgb(238, 0, 0);
 }
 
-  .mat-button:hover{
-  color: red;
+.mat-button:hover {
+   background-color:rgb(224, 224, 224);
 }
+
 
 .a{
   color: black;
@@ -26,16 +27,29 @@
 }
 ul{
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-
 
 }
-li {
-  padding: 15px;
+
+.mat-button{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 120px;
   text-align: center;
-
-
 }
-
+.mat-mini-fab{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.mat-menu-item {
+  color: blue !important;
+}
+.mat-menu{
+  background-color: aqua;
+}
+button.mat-menu-item{
+  background-color: rgb(255, 0, 0);
+}
+button.mat-menu-item:hover {
+  background-color: blue;
+  color: #fff !important;
+}

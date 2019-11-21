@@ -34,6 +34,9 @@ import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarService } from './car.service';
+import { CustomersService } from './customers.service';
+import { LoginService } from './login.service';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 
@@ -78,9 +81,12 @@ import { CarService } from './car.service';
     AngularFireAuthModule,
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
 
   ],
-  providers: [CarService],
+  providers: [CarService,
+              CustomersService,
+              LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

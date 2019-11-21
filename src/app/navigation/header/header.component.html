@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <div fxHide.gt-xs>
+  <div fxHide.gt-sm>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -10,53 +10,52 @@
 
   <a routerLink="/home" class="a">Home</a>
 
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.sm fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-
       <li>
-        <mat-icon class="ikonki">drive_eta</mat-icon>
-        <button mat-button [matMenuTriggerFor]="flota">Nasza flota</button>
+        <button mat-button [matMenuTriggerFor]="flota">
+          <mat-icon class="ikonki">drive_eta</mat-icon>
+          <span>    Nasza flota </span>
+        </button>
       </li>
-
       <li>
-        <mat-icon class="ikonki">double_arrow</mat-icon>
-        <button mat-button routerLink="/rezerwacja">Rezerwacja</button>
+       <button mat-button routerLink="/rezerwacja">
+          <mat-icon class="ikonki">double_arrow</mat-icon>
+          <span>  Rezerwacja </span>
+       </button>
       </li>
-
       <li>
-        <mat-icon class="ikonki">local_phone</mat-icon>
-        <button mat-button routerLink="/kontakt">Kontakt</button>
+        <button mat-button routerLink="/kontakt">
+          <mat-icon class="ikonki">local_phone</mat-icon>
+          <span>    Kontakt </span>
+        </button>
       </li>
-
       <li *ngIf="!user">
-        <mat-icon class="ikonki">account_box</mat-icon>
-        <button mat-button routerLink="/login">Logowanie</button>
+        <button mat-button routerLink="/login">
+          <mat-icon class="ikonki">account_box</mat-icon>
+          <span>   Logowanie </span>
+        </button>
       </li>
-
-
       <li *ngIf="!user">
-        <mat-icon class="ikonki">account_box</mat-icon>
-        <button mat-button routerLink="/register">Rejestracja</button>
+        <button mat-button routerLink="/register">
+          <mat-icon class="ikonki">account_box</mat-icon>
+          <span>   Rejestracja </span>
+        </button>
       </li>
-
       <li>
-        <mat-icon class="ikonki">settings</mat-icon>
-        <button mat-button routerLink="/ustawienia">Ustawienia</button>
+        <button mat-button routerLink="/ustawienia">
+          <mat-icon class="ikonki">settings</mat-icon>
+          <span>   Ustawienia </span>
+        </button>
       </li>
-
-
-
       <li>
         <button *ngIf="user" mat-mini-fab [matMenuTriggerFor]="avatarDropDown" class="toolbar-avatar"
           [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">
         </button>
       </li>
-
-
-
     </ul>
   </div>
-
+</mat-toolbar>
 
   <mat-menu #avatarDropDown="matMenu">
     <mat-card>
@@ -73,4 +72,4 @@
     <button mat-menu-item routerLink="/osobowe">Osobowe</button>
     <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
   </mat-menu>
-</mat-toolbar>
+
