@@ -1,8 +1,8 @@
 export default class Car {
-  id: number;
-  model: string;
-  price: string;
-  imageUrl: string;
-  grupa: string;
-  opis: string;
+  constructor(public id: number, public model: string,public price: string,
+              public imageUrl: string, public grupa: string, public opis: string) {
+
+  }
+
+
 }

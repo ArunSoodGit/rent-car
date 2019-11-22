@@ -16,7 +16,7 @@ export class CustomersService {
 
 
    }
-getCustomers(){
+getCustomers() {
 
 
   return this.customers;

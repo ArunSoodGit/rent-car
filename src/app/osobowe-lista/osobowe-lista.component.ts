@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import Car from '../car';
 import { Cars } from '../cars';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-osobowe-lista',
@@ -9,31 +10,28 @@ import { Cars } from '../cars';
 })
 export class OsoboweListaComponent implements OnInit {
 
-@Input()grupa;
+  @Input() grupa;
 
   visibleCars: Car[] = [];
   i: number;
+  carList: Car[] = [];
 
-  constructor() { }
+
+  constructor(public carService: CarService) { }
 
 
   ngOnInit() {
 
-     return this.changeCar();
-
+    this.carService.getCars().subscribe(cars => {
+      this.carList = cars;
     }
-
-    changeCar() {
-      for ( this.i = 0; this.i < Cars.length; this.i++) {
-        if ( Cars[this.i].grupa === this.grupa || this.grupa === 'all') {
-          this.visibleCars.push(Cars[this.i]);
-        }
-      }
-      console.log(this.grupa);
-      return this.visibleCars;
-
+    );
   }
+
 }
+
+
+
 
 
 

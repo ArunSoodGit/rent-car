@@ -1,7 +1,9 @@
 import { Injectable, Input } from '@angular/core';
 import Car from './car';
 import { Cars } from './cars';
-
+import {AngularFireDatabase, AngularFireObject, AngularFireList} from 'angularfire2/database';
+import { Observable, } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 
@@ -11,22 +13,28 @@ import { Cars } from './cars';
 })
 
 
-
 export class CarService {
   @Input()grupa;
 
-  visibleCars: Car[] = [];
-  i: number;
+  cars: Observable<any[]>;
 
-  constructor() { }
+  constructor(public db: AngularFireDatabase) {
+    this.cars = this.db.list('cars').snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    );
+   }
 
   getCars() {
-    for ( this.i = 0; this.i < Cars.length; this.i++) {
-      if ( Cars[this.i].grupa === this.grupa || this.grupa === 'all') {
-        this.visibleCars.push(Cars[this.i]);
-      }
-    }
-    console.log(this.grupa);
-    return this.visibleCars;
+   return this.cars;
+
   }
+  createCars(car: Car){
+    const itemsRef = this.db.list('cars');
+    itemsRef.push( car );
+
+  }
+
+
 }
