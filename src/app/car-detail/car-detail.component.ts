@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 
 
-import { getLocaleEraNames } from '@angular/common';
 import Car from '../car';
-import { Cars } from '../cars';
+
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { CarService } from '../car.service';
+import { LoginService } from '../login.service';
+import { Cars } from '../cars';
 
 
 
@@ -18,27 +21,28 @@ import { ActivatedRoute } from '@angular/router';
 export class CarDetailComponent implements OnInit {
 
   car: Car;
-
-
+  user: firebase.User;
   i: number;
+  carList: Car[] = [];
 
-
-
-  constructor(  private route: ActivatedRoute) {
-
-
-   }
+  constructor(public carService: CarService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
 
-    this.car = this.findCar(+this.route.snapshot.params['id']);
 
-}
+    this.findCar(+this.route.snapshot.params.id);
 
-  findCar(id: number) {
-    return Cars.slice(0).find(car => car.id === id );
+
   }
 
+  findCar(id: number) {
 
+    this.carService.getCars().subscribe(cars => {
+      this.carList = cars;
+
+      return this.car = this.carList.slice(0).find(car => car.id === id);
+    });
+  }
 }
 

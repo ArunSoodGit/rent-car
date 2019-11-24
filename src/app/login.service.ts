@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase';
-import { Router } from  "@angular/router";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -25,16 +25,16 @@ export class LoginService {
   getLoggedInUser() {
     return this.afAuth.authState;
   }
-   login(email: string, password: string) {
+  login(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password);
 
-}
- register(email: string, password: string) {
-   this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-   this.sendEmailVerification();
-}
-async sendEmailVerification() {
-  await this.afAuth.auth.currentUser.sendEmailVerification();
+  }
+  register(email: string, password: string) {
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    this.sendEmailVerification();
+  }
+  async sendEmailVerification() {
+    await this.afAuth.auth.currentUser.sendEmailVerification();
 
-}
+  }
 }

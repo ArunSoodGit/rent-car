@@ -1,17 +1,18 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title> {{car.model}}</mat-card-title>
-    <mat-card-subtitle>{{car.price}}</mat-card-subtitle>
+    <mat-card-title> {{car?.model}}</mat-card-title>
+    <mat-card-subtitle>{{car?.price}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="car.imageUrl"  class="image">
+  <img mat-card-image [src]="car?.imageUrl"  class="image">
   <mat-card-content class="content">
     <p>
-      {{car.opis}}
+      {{car?.opis}}
+
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button routerLink="/rezerwacja">REZERWUJ</button>
+    <button mat-button  [routerLink]="['/rezerwacja', car?.id]">REZERWUJ</button>
     <button mat-button routerLink="/osobowe">POWRÓT</button>
   </mat-card-actions>
 </mat-card>

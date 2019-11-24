@@ -16,10 +16,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
 },
-{
-  path: 'rezerwacja',
-  component: RezerwacjaComponent
-},
+
 {
   path: 'ustawienia',
   component: UstawieniaComponent
@@ -31,6 +28,10 @@ const routes: Routes = [
 {
   path: 'car/:id',
   component: CarDetailComponent
+},
+{
+  path: 'rezerwacja/:id',
+  component: RezerwacjaComponent
 },
 
 {

@@ -30,14 +30,16 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from 'src/environments/environment';
 import { UserComponent } from './user/user.component';
-
+import {MatStepperModule} from '@angular/material/stepper';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CarService } from './car.service';
 import { CustomersService } from './customers.service';
 import { LoginService } from './login.service';
+import {MatInputModule} from '@angular/material';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -76,10 +78,14 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     MatTabsModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatStepperModule,
+    MatFormFieldModule,
     MatExpansionModule,
     MatCardModule,
+    MatInputModule,
     AngularFireAuthModule,
     AngularFireModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
 
