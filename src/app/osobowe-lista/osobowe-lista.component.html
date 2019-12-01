@@ -1,14 +1,12 @@
-<div class="row" >
+<div class="row">
   <ul id="list">
     <li *ngFor="let car of carList">
       <div class="one" *ngIf="car.grupa ==grupa || grupa=='all'">
-          <a [routerLink]="['/car', car.id]">
-            <img src="{{car.imageUrl}}" class="tn" width="220" height="117">
-          </a>
-          <div class="napis"> {{car.model}}   </div>
-
+        <a [routerLink]="['/car', car.id]">
+          <img src="{{car.imageUrl}}" class="tn" width="220" height="117">
+        </a>
+        <div class="napis"> {{car.model}} </div>
       </div>
-
     </li>
   </ul>
 </div>

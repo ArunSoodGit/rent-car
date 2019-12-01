@@ -12,9 +12,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
-    constructor( private loginService: LoginService) { }
-
-
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
     this.loginService.getLoggedInUser()
@@ -25,8 +23,8 @@ export class HeaderComponent implements OnInit {
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
 
-}
-logout() {
-  this.loginService.logout();
-}
+  }
+  logout() {
+    this.loginService.logout();
+  }
 }

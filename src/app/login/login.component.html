@@ -1,32 +1,14 @@
-  <div class="all">
-      <div *ngIf="!user"  class="login-box">
-          <h1>Zaloguj się</h1>
-          <div class="textbox">
-            <input type="text" class="formControl" placeholder="UserEmail" #userEmail required>
-          </div>
-
-          <div class="textbox">
-            <input type="password" class="formControl" placeholder="Password" #userPassword required>
-          </div>
-
-          <i class="fas fa-user"></i>
-
-            <input type="button" class="btn" value="Zaloguj się" (click)="service.login(userEmail.value, userPassword.value)">
-
-            <input type="button" class="btn" value="Zaloguj się przez google" (click)="service.loginG()">
-
-
-
-          </div>
-
-
+<div class="all">
+  <div *ngIf="!user" class="login-box">
+    <h1>Zaloguj się</h1>
+    <div class="textbox">
+      <input type="text" class="formControl" placeholder="UserEmail" #userEmail required>
+    </div>
+    <div class="textbox">
+      <input type="password" class="formControl" placeholder="Password" #userPassword required>
+    </div>
+    <i class="fas fa-user"></i>
+    <input type="button" class="btn" value="Zaloguj się" (click)="service.login(userEmail.value, userPassword.value)">
+    <input type="button" class="btn" value="Zaloguj się przez google" (click)="service.loginG()">
   </div>
-
-
-
-
-
-
-
-
-
+</div>

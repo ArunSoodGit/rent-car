@@ -16,7 +16,7 @@ export class RezerwacjaComponent implements OnInit {
   secondFormGroup: FormGroup;
   isEditable = false;
 
-  constructor(public carService: CarService, private route: ActivatedRoute, private _formBuilder: FormBuilder) {}
+  constructor(public carService: CarService, private route: ActivatedRoute, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.findCar(+this.route.snapshot.params.id);
@@ -26,17 +26,13 @@ export class RezerwacjaComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-
-
-    console.log(this.route.snapshot.params.id);
-    }
+  }
 
 
   findCar(id: number) {
     this.carService.getCars().subscribe(cars => {
       this.carList = cars;
-      console.log(this.carList.slice(0).find(car => car.id === id));
       return this.car = this.carList.slice(0).find(car => car.id === id);
     });
-}
+  }
 }

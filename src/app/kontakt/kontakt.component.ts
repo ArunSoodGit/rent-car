@@ -14,15 +14,15 @@ export class KontaktComponent implements OnInit {
 
   constructor(public customerService: CustomersService) {
 
-   }
-   customersList: Customer[];
+  }
+  customersList: Customer[];
 
   ngOnInit() {
 
     this.customerService.getCustomers().subscribe(customers => {
-        this.customersList = customers;
-        console.log(customers);
-      }
+      this.customersList = customers;
+      console.log(customers);
+    }
     );
 
 

@@ -2,33 +2,27 @@
   position:fixed;
   top:0;
   z-index: 2;
-  background-color: white;
-  color:black;
-  box-shadow: 10px 2px 5px #d3d0d0;
+  background-color: rgba(0, 0, 0,0.5);
+  color:white;
   height: 60px;
 }
 
-
 .ikonki{
   color: rgb(238, 0, 0);
-}
 
+}
 .mat-button:hover  {
-   background-color:rgb(251, 251, 251);
-
+   background-color:rgba(63, 62, 62, 0.5);
 }
-
-
 .a{
   color: black;
   text-decoration: none;
   display: block;
 
-
 }
 ul{
+  opacity: 1;
   list-style-type: none;
-
 }
 
 .mat-button{
@@ -41,16 +35,14 @@ ul{
   margin-top: 10px;
   margin-left: 10px;
 }
-.mat-menu-item {
 
-}
-.mat-menu{
-
-}
-button.mat-menu-item{
-
-}
 button.mat-menu-item:hover {
-  background-color: blue;
+  background-color:red;
   color: #fff !important;
+}
+.user{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+  color:white;
 }

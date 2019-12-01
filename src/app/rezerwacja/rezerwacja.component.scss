@@ -1,3 +1,13 @@
 .all{
-  margin-top: 80px;
+  margin-top: 180px;
+  max-width: 1200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.content{
+  margin-top:150px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
 }

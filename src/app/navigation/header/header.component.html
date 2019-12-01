@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <div fxHide.gt-sm>
+  <div >
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -15,61 +15,64 @@
       <li>
         <button mat-button [matMenuTriggerFor]="flota">
           <mat-icon class="ikonki">drive_eta</mat-icon>
-          <span>    Nasza flota </span>
+          <span> Flota </span>
         </button>
       </li>
       <li>
-       <button mat-button routerLink="/rezerwacja">
+        <button mat-button routerLink="/rezerwacja">
           <mat-icon class="ikonki">double_arrow</mat-icon>
-          <span>  Rezerwacja </span>
-       </button>
+          <span> Rezerwacja </span>
+        </button>
       </li>
       <li>
         <button mat-button routerLink="/kontakt">
           <mat-icon class="ikonki">local_phone</mat-icon>
-          <span>    Kontakt </span>
+          <span> Kontakt </span>
         </button>
       </li>
       <li *ngIf="!user">
         <button mat-button routerLink="/login">
           <mat-icon class="ikonki">account_box</mat-icon>
-          <span>   Logowanie </span>
+          <span> Logowanie </span>
         </button>
       </li>
       <li *ngIf="!user">
         <button mat-button routerLink="/register">
           <mat-icon class="ikonki">account_box</mat-icon>
-          <span>   Rejestracja </span>
+          <span> Rejestracja </span>
         </button>
       </li>
       <li>
         <button mat-button routerLink="/ustawienia">
           <mat-icon class="ikonki">settings</mat-icon>
-          <span>   Ustawienia </span>
+          <span> Ustawienia </span>
+
         </button>
       </li>
       <li>
         <button *ngIf="user" mat-mini-fab [matMenuTriggerFor]="avatarDropDown" class="toolbar-avatar"
           [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">
         </button>
-      </li>
+       <li class="user">
+        {{user?.displayName}}
+       </li>
     </ul>
   </div>
+
 </mat-toolbar>
 
-  <mat-menu #avatarDropDown="matMenu">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{ user?.displayName }}</mat-card-title>
-        <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
-      </mat-card-header>
-      <button mat-menu-item (click)="logout()">
-        <mat-icon>exit_to_app</mat-icon>Wyloguj sie
-      </button>
-    </mat-card>
-  </mat-menu>
-  <mat-menu  #flota="matMenu">
-    <button mat-menu-item routerLink="/osobowe">Osobowe</button>
-    <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
-  </mat-menu>
-
+<mat-menu #avatarDropDown="matMenu">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ user?.displayName }}</mat-card-title>
+      <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>Wyloguj sie
+    </button>
+  </mat-card>
+</mat-menu>
+<mat-menu #flota="matMenu">
+  <button mat-menu-item routerLink="/osobowe">Osobowe</button>
+  <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
+</mat-menu>

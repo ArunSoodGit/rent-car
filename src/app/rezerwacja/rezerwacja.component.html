@@ -2,19 +2,27 @@
   <button mat-raised-button (click)="isOptional = !isOptional">
     {{!isOptional ? 'Enable optional steps' : 'Disable optional steps'}}
   </button>
-
   <button mat-raised-button (click)="isEditable = !isEditable">
     {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
   </button>
-
   <mat-horizontal-stepper linear #stepper>
     <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Wybierz samochód</ng-template>
+        <ng-template matStepLabel>Podaj dane</ng-template>
+        <div class="example-container">
         <mat-form-field>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-
+          <input matInput placeholder="Imie" formControlName="firstCtrl" required>
         </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nazwisko" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Adres email" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Adres" formControlName="firstCtrl" required>
+        </mat-form-field>
+      </div>
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
@@ -22,27 +30,25 @@
     </mat-step>
     <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Podaj dane </ng-template>
+        <ng-template matStepLabel>Wbierz termin </ng-template>
         <mat-form-field>
-          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+          <input matInput placeholder="Data" formControlName="secondCtrl" required>
         </mat-form-field>
         <div>
-
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
+      <ng-template matStepLabel>Gotowe</ng-template>
+      Rezerwacja zakończona pomyślnie
+
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
-
   {{car?.model}}
-
 </div>
