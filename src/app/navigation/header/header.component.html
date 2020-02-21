@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar *ngIf="user">
   <div >
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
@@ -6,46 +6,36 @@
 
   </div>
 
-  <mat-icon class="ikonki">home</mat-icon>
 
-  <a routerLink="/home" class="a">Home</a>
+  <a routerLink="/home" class="a">RENT CAR</a>
+  <mat-icon class="ikonki">emoji_transportation</mat-icon>
+
 
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.sm fxHide.xs>
-    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+    <ul fxLayout fxLayoutGap="5px" class="navigation-items">
       <li>
-        <button mat-button [matMenuTriggerFor]="flota">
+        <button mat-button routerLink="/osobowe">
           <mat-icon class="ikonki">drive_eta</mat-icon>
-          <span> Flota </span>
+
         </button>
       </li>
       <li>
-        <button mat-button routerLink="/rezerwacja">
+        <button mat-button routerLink="/lista-klient">
           <mat-icon class="ikonki">double_arrow</mat-icon>
-          <span> Rezerwacja </span>
+
         </button>
       </li>
       <li>
         <button mat-button routerLink="/kontakt">
           <mat-icon class="ikonki">local_phone</mat-icon>
-          <span> Kontakt </span>
+
         </button>
       </li>
-      <li *ngIf="!user">
-        <button mat-button routerLink="/login">
-          <mat-icon class="ikonki">account_box</mat-icon>
-          <span> Logowanie </span>
-        </button>
-      </li>
-      <li *ngIf="!user">
-        <button mat-button routerLink="/register">
-          <mat-icon class="ikonki">account_box</mat-icon>
-          <span> Rejestracja </span>
-        </button>
-      </li>
+
       <li>
         <button mat-button routerLink="/ustawienia">
           <mat-icon class="ikonki">settings</mat-icon>
-          <span> Ustawienia </span>
+
 
         </button>
       </li>
@@ -53,9 +43,7 @@
         <button *ngIf="user" mat-mini-fab [matMenuTriggerFor]="avatarDropDown" class="toolbar-avatar"
           [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">
         </button>
-       <li class="user">
-        {{user?.displayName}}
-       </li>
+
     </ul>
   </div>
 
@@ -72,7 +60,4 @@
     </button>
   </mat-card>
 </mat-menu>
-<mat-menu #flota="matMenu">
-  <button mat-menu-item routerLink="/osobowe">Osobowe</button>
-  <button mat-menu-item routerLink="/dostawcze">Dostawcze</button>
-</mat-menu>
+

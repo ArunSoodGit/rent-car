@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import { OsoboweComponent } from './osobowe/osobowe.component';
 import { RezerwacjaComponent } from './rezerwacja/rezerwacja.component';
-import { KontaktComponent } from './kontakt/kontakt.component';
-import { UstawieniaComponent } from './ustawienia/ustawienia.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ListaKlientComponent } from './lista-klient/lista-klient.component';
+import {NewCustomerComponent} from './new-customer/new-customer.component';
 
 
 
@@ -17,10 +17,7 @@ const routes: Routes = [
     component: HomeComponent
 },
 
-{
-  path: 'ustawienia',
-  component: UstawieniaComponent
-},
+
 {
   path: 'osobowe',
   component: OsoboweComponent
@@ -30,13 +27,13 @@ const routes: Routes = [
   component: CarDetailComponent
 },
 {
-  path: 'rezerwacja/:id',
+  path: 'rezerwacja',
   component: RezerwacjaComponent
 },
 
 {
-  path: 'kontakt',
-  component: KontaktComponent
+  path: 'lista-klient',
+  component: ListaKlientComponent
 },
 {
     path: '',
@@ -48,6 +45,11 @@ const routes: Routes = [
   component: LoginComponent,
 
 },
+  {
+    path: 'new-customer',
+    component: NewCustomerComponent,
+
+  },
 
 {
    path: 'register', component: RegisterComponent,

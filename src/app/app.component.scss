@@ -1,18 +1,26 @@
-.mat-drawer-container{
+.mat-sidenav-container{
+
+
+  position: fixed;
+
+  background: none;
   height: 100%;
-  background-image: url("/dark.jpg");
-
-
-}
-
-.all{
-  margin-top:70px;
+  width: 100%;
 
 }
-.mat-drawer{
-  background-color:rgba(0, 0, 0,0.5);
-  color: white;
+.mat-sidenav-content{
+  top:50px;
+}
+.mat-sidenav{
+  background-color:rgba(0, 0, 0, 0.1);
+  width: 200px;
+
 }
 .mat-sidenav-list{
   color:white;
+}
+
+.layout{
+  background-image: url('/assets/img/tlo.jpg');
+
 }

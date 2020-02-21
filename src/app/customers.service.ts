@@ -22,6 +22,10 @@ getCustomers() {
   return this.customers;
 
 }
+saveCustomer(customer: Customer) {
+  const itemsRef = this.db.list('customers');
+  itemsRef.push(customer);
+}
 
   }
 

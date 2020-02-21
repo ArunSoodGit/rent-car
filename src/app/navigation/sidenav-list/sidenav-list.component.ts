@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -7,9 +8,14 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class SidenavListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
-  constructor() { }
+  user: firebase.User;
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.loginService.getLoggedInUser()
+    .subscribe(user => {
+      this.user = user;
+    });
   }
   public onSidenavClose = () => {
     this.sidenavClose.emit();

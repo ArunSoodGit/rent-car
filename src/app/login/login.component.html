@@ -1,14 +1,19 @@
 <div class="all">
-  <div *ngIf="!user" class="login-box">
-    <h1>Zaloguj się</h1>
-    <div class="textbox">
-      <input type="text" class="formControl" placeholder="UserEmail" #userEmail required>
+
+  <mat-icon class="i">emoji_transportation</mat-icon>
+  <a class="a">RENT CAR</a>
+  <form class="login">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Identyfikator</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
-    <div class="textbox">
-      <input type="password" class="formControl" placeholder="Password" #userPassword required>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Hasło</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
-    <i class="fas fa-user"></i>
-    <input type="button" class="btn" value="Zaloguj się" (click)="service.login(userEmail.value, userPassword.value)">
-    <input type="button" class="btn" value="Zaloguj się przez google" (click)="service.loginG()">
-  </div>
+    <div class="form-group form-check">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="service.loginG()">Zaloguj się</button>
+  </form>
+
 </div>

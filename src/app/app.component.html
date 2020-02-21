@@ -1,14 +1,12 @@
-<app-layout>
-  <mat-drawer-container class="example-container">
-    <mat-drawer #sidenav mode="side" opened >
-      <app-sidenav-list (sidenavClose)="sidenav.close()">
-      </app-sidenav-list>
-    </mat-drawer>
-    <mat-drawer-content>
+<app-layout class="layout">
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side">
+      <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
       <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-      <main class="all">
-        <router-outlet></router-outlet>
-      </main>
-    </mat-drawer-content>
-  </mat-drawer-container>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </app-layout>
