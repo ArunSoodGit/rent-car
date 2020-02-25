@@ -17,7 +17,7 @@ export class CarService {
   @Input() grupa;
 
 
-  cars: Observable<any[]>;
+  cars: Observable<Car[]>;
 
   constructor(public db: AngularFireDatabase) {
     this.cars = this.db.list('cars').snapshotChanges().pipe(

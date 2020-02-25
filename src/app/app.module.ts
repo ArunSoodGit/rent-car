@@ -34,7 +34,9 @@ import { LoginComponent } from './login/login.component';
 import { CarService } from './car.service';
 import { CustomersService } from './customers.service';
 import { LoginService } from './login.service';
-import {MatInputModule,  MatPaginatorModule, MatSortModule} from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -48,7 +50,7 @@ import { ScheduleModule, TimelineMonthService, DayService, WeekService, WorkWeek
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ListaKlientComponent } from './lista-klient/lista-klient.component';
 import { NewCustomerComponent } from './new-customer/new-customer.component';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
