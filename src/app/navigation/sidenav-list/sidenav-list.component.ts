@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import { LoginService } from 'src/app/login.service';
 
 @Component({
@@ -8,9 +8,12 @@ import { LoginService } from 'src/app/login.service';
 })
 export class SidenavListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
-  user: firebase.User;
+
+  @Output() public sidenavToggle = new EventEmitter();
   constructor(private loginService: LoginService) { }
 
+
+  user: firebase.User;
   ngOnInit() {
     this.loginService.getLoggedInUser()
     .subscribe(user => {
@@ -19,5 +22,11 @@ export class SidenavListComponent implements OnInit {
   }
   public onSidenavClose = () => {
     this.sidenavClose.emit();
+
+  }
+  public onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+
+
   }
 }

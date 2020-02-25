@@ -1,5 +1,8 @@
 
 <div class="info">
+  <button mat-icon-button  (click)="onSidenavClose()">
+    <mat-icon>menu</mat-icon>
+  </button>
   <button *ngIf="user" mat-mini-fab class="toolbar-avatar"
     [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">
   </button>

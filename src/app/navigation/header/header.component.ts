@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { LoginService } from 'src/app/login.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,10 @@ import { LoginService } from 'src/app/login.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+ test: Observable<string> ;
   user: firebase.User;
-
   @Output() public sidenavToggle = new EventEmitter();
+
 
   constructor(private loginService: LoginService) { }
 
@@ -19,9 +20,11 @@ export class HeaderComponent implements OnInit {
       .subscribe(user => {
         this.user = user;
       });
+3
   }
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
+
 
   }
   logout() {
