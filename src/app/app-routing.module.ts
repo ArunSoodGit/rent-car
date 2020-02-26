@@ -5,10 +5,8 @@ import { OsoboweComponent } from './osobowe/osobowe.component';
 import { RezerwacjaComponent } from './rezerwacja/rezerwacja.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { ListaKlientComponent } from './lista-klient/lista-klient.component';
 import {NewCustomerComponent} from './new-customer/new-customer.component';
-
 
 
 const routes: Routes = [
@@ -16,7 +14,6 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
 },
-
 
 {
   path: 'osobowe',
@@ -51,9 +48,7 @@ const routes: Routes = [
 
   },
 
-{
-   path: 'register', component: RegisterComponent,
-},
+
 {
     path: '**',
     redirectTo: '/home',
