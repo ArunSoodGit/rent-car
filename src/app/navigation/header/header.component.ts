@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { LoginService } from 'src/app/login.service';
+import { LoginService } from 'src/app/services/login.service';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
       .subscribe(user => {
         this.user = user;
       });
-3
+
   }
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();

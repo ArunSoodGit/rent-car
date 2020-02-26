@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,11 +11,7 @@ export class LoginComponent implements OnInit {
   constructor(public service: LoginService) { }
 
   ngOnInit() {
-    this.service.getLoggedInUser()
-      .subscribe(user => {
-        console.log(user);
-        this.user = user;
-      });
+    this.service.getLoggedInUser();
   }
   loginGoogle() {
     console.log('Login...');

@@ -2,13 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 
 
-import Car from '../car';
+import Car from '../models/car';
 
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { CarService } from '../car.service';
-import { LoginService } from '../login.service';
-import { Cars } from '../cars';
+import { CarService } from '../services/car.service';
 
 
 

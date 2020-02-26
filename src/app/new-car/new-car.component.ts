@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomersService} from '../services/customers.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import Customer from '../models/customer';
+import {CustomersService} from '../services/customers.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-new-customer',
-  templateUrl: './new-customer.component.html',
-  styleUrls: ['./new-customer.component.scss']
+  selector: 'app-new-car',
+  templateUrl: './new-car.component.html',
+  styleUrls: ['./new-car.component.scss']
 })
-export class NewCustomerComponent implements OnInit {
+export class NewCarComponent implements OnInit {
   customer = new Customer();
 
   constructor(private service: CustomersService, private snackBar: MatSnackBar) {

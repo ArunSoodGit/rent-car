@@ -1,9 +1,10 @@
-<mat-card class="example-card">
-  <div class="title">Nowy Klient</div>
+<mat-grid-list cols="3" rowHeight="500px">
+  <mat-grid-tile>
+    <div class="controles-container">
   <mat-form-field >
     <input  type="number" matInput placeholder="Id klienta"  [(ngModel)]="customer.id"  [disabled]="true">
   </mat-form-field>
-  <div>
+
     <mat-form-field >
       <input type="text"  matInput placeholder="Imię"  [(ngModel)]="customer.imie" required="true">
     </mat-form-field>
@@ -15,7 +16,10 @@
     <mat-form-field >
       <input type="text" matInput placeholder="Adres email" [(ngModel)]="customer.email" >
     </mat-form-field>
-  </div>
+    </div>
+    </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="controles-container">
     <mat-form-field >
       <input type="text" matInput placeholder="Kraj"  [(ngModel)]="customer.kraj">
     </mat-form-field>
@@ -32,8 +36,10 @@
     <mat-form-field >
       <input type="text" matInput placeholder="Nr. lokalu"  [(ngModel)]="customer.nrLokalu">
     </mat-form-field>
-
-  <div>
+      </div>
+    </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="controles-container">
   <mat-form-field >
     <input type="text" matInput placeholder="Nr. prawa jazdy"  [(ngModel)]="customer.nrPrawaJazdy" required="true">
   </mat-form-field>
@@ -44,15 +50,10 @@
   <mat-form-field class="firstName">
     <input type="number" matInput placeholder="Nr. telefonu"  [(ngModel)]="customer.nrTelefonu" required="true">
   </mat-form-field>
-    </div>
-  <p>
+
+  <div class="btn">
     <button mat-raised-button color="primary" (click)="onSubmit(customer)">Dodaj</button>
-  </p>
-
-  <p>
-    <button mat-raised-button color="primary" [routerLink]="['/']">Go back</button>
-  </p>
-
-
-
-</mat-card>
+  </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

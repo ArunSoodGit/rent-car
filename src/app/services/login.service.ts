@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase';
+import {auth, User} from 'firebase';
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  readonly authState$: Observable<User | null> = this.afAuth.authState;
 
-  constructor(
-    private afAuth: AngularFireAuth, public router: Router
+  constructor( private afAuth: AngularFireAuth, public router: Router
   ) { }
 
   loginG() {

@@ -1,7 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
-import Car from '../car';
-import { Cars } from '../cars';
-import { CarService } from '../car.service';
+import Car from '../models/car';
+import { CarService } from '../services/car.service';
 
 @Component({
   selector: 'app-osobowe-lista',
@@ -12,7 +11,7 @@ export class OsoboweListaComponent implements OnInit {
 
   @Input() grupa;
 
-  visibleCars: Car[] = [];
+
   i: number;
   carList: Car[] = [];
 
