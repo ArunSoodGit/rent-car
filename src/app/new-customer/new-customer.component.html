@@ -1,8 +1,7 @@
-<mat-grid-list cols="3" rowHeight="500px">
-  <mat-grid-tile>
-    <div class="controles-container">
+
+<div mat-dialog-content>
   <mat-form-field >
-    <input  type="number" matInput placeholder="Id klienta"  [(ngModel)]="customer.id"  [disabled]="true">
+    <input  type="number" matInput placeholder="Id klienta"  [(ngModel)]="customer.key"  [disabled]="true">
   </mat-form-field>
 
     <mat-form-field >
@@ -16,10 +15,8 @@
     <mat-form-field >
       <input type="text" matInput placeholder="Adres email" [(ngModel)]="customer.email" >
     </mat-form-field>
-    </div>
-    </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="controles-container">
+
+
     <mat-form-field >
       <input type="text" matInput placeholder="Kraj"  [(ngModel)]="customer.kraj">
     </mat-form-field>
@@ -36,10 +33,9 @@
     <mat-form-field >
       <input type="text" matInput placeholder="Nr. lokalu"  [(ngModel)]="customer.nrLokalu">
     </mat-form-field>
-      </div>
-    </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="controles-container">
+
+
+
   <mat-form-field >
     <input type="text" matInput placeholder="Nr. prawa jazdy"  [(ngModel)]="customer.nrPrawaJazdy" required="true">
   </mat-form-field>
@@ -51,9 +47,10 @@
     <input type="number" matInput placeholder="Nr. telefonu"  [(ngModel)]="customer.nrTelefonu" required="true">
   </mat-form-field>
 
-  <div class="btn">
+
+</div>
+<div mat-dialog-actions>
+
     <button mat-raised-button color="primary" (click)="onSubmit(customer)">Dodaj</button>
-  </div>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+
+</div>

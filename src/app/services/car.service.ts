@@ -32,11 +32,7 @@ export class CarService {
     itemsRef.push(car);
 
   }
-  getCar(id: number): Observable<Car>{
-    const car = this.db.list
-    console.log(this.cars[id]);
-    return this.cars[id];
-  }
+
 
 
 }

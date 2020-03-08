@@ -37,10 +37,7 @@ height: 50px;
 
   text-align: center;
 }
-.mat-mini-fab{
-  margin-top: 10px;
-  margin-left: 10px;
-}
+
 
 button.mat-menu-item:hover {
   background-color:red;
@@ -50,4 +47,7 @@ button.mat-menu-item:hover {
 .toolbar-avatar{
   background-position: center;
   background-size: cover;
+}
+.navigation-items{
+  margin-top: 20px;
 }

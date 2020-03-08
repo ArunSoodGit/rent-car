@@ -1,9 +1,7 @@
 table ,mat-paginator{
  width: 100%;
 }
-button{
-  margin-top: 50px;
-}
+
 .create{
   background-color: rgba(0, 0, 0,0.05);
   color:white;
@@ -12,6 +10,7 @@ button{
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
   .mat-form-field {
     width: 30%;
     margin-left: 10px;
@@ -19,7 +18,7 @@ button{
   }
 }
 .rows:hover{
-  background: #999999;
+  background: #E8EAF6;
 }
 
 nav {
@@ -58,3 +57,9 @@ nav ul li a:hover {
 .add{
   float: right;
 }
+.edit ,.delete{
+  cursor: pointer;
+  margin-left: 10px;
+  color: #8e44ad;
+}
+

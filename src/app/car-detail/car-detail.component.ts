@@ -6,6 +6,7 @@ import Car from '../models/car';
 
 import { ActivatedRoute } from '@angular/router';
 import { CarService } from '../services/car.service';
+import customer from '../models/customer';
 
 
 
@@ -19,7 +20,6 @@ export class CarDetailComponent implements OnInit {
 
   car: Car;
   user: firebase.User;
-  i: number;
   carList: Car[] = [];
 
   constructor(public carService: CarService, private route: ActivatedRoute) {
@@ -39,6 +39,7 @@ export class CarDetailComponent implements OnInit {
       this.carList = cars;
 
       return this.car = this.carList.slice(0).find(car => car.id === id);
+
     });
   }
 }

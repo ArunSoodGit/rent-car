@@ -18,10 +18,11 @@ export class NewCustomerComponent implements OnInit {
   }
 
   onSubmit(customer: Customer) {
-    console.log(customer);
-    this.service.saveCustomer(customer)
-    this.snackBar.open('Employee added successful', 'OK', {
-      duration: 2000,
-    });
-  }
+      this.service.addCustomer(customer);
+      console.log(customer);
+      this.snackBar.open('Employee added successful', 'OK', {
+        duration: 2000,
+      });
+    }
+
 }

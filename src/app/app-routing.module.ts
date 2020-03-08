@@ -7,6 +7,7 @@ import { CarDetailComponent } from './car-detail/car-detail.component';
 import { LoginComponent } from './login/login.component';
 import { ListaKlientComponent } from './lista-klient/lista-klient.component';
 import {NewCustomerComponent} from './new-customer/new-customer.component';
+import {EditCustomerComponent} from './edit-customer/edit-customer.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   path: 'car/:id',
   component: CarDetailComponent
 },
+  {
+    path: 'customer/:id',
+    component: EditCustomerComponent
+  },
 {
   path: 'rezerwacja',
   component: RezerwacjaComponent

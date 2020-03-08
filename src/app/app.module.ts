@@ -50,6 +50,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 
 
@@ -70,6 +71,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ListaKlientComponent,
     NewCustomerComponent,
     NewCarComponent,
+    EditCustomerComponent,
   ],
   imports: [
     FormsModule,
@@ -105,7 +107,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   ],
   providers: [CarService, CustomersService, LoginService],
   bootstrap: [AppComponent],
-  entryComponents: [NewCustomerComponent]
+  entryComponents: [NewCustomerComponent, EditCustomerComponent]
 
 })
 export class AppModule { }

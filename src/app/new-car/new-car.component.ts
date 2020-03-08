@@ -17,11 +17,5 @@ export class NewCarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(customer: Customer) {
-    console.log(customer);
-    this.service.saveCustomer(customer)
-    this.snackBar.open('Employee added successful', 'OK', {
-      duration: 2000,
-    });
-  }
+
 }

@@ -1,5 +1,5 @@
 export default class Customer {
-  id: number;
+  key: string;
   imie: string;
   nazwisko: string;
   email: string;
