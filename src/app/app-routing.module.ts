@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ListaKlientComponent } from './lista-klient/lista-klient.component';
 import {NewCustomerComponent} from './new-customer/new-customer.component';
 import {EditCustomerComponent} from './edit-customer/edit-customer.component';
+import {WykresComponent} from './wykres/wykres.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   path: 'osobowe',
   component: OsoboweComponent
 },
+  {
+    path: 'wykres',
+    component: WykresComponent
+  },
 {
   path: 'car/:id',
   component: CarDetailComponent

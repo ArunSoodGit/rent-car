@@ -21,10 +21,13 @@ export class EditCustomerComponent implements OnInit {
               public dialogRef: MatDialogRef<EditCustomerComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Customer) {
   }
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
+
+
   ngOnInit(): void {
 
     // this.findCustomer(1);
@@ -34,7 +37,7 @@ export class EditCustomerComponent implements OnInit {
 
   onSubmit(customer) {
     console.log(customer);
-    this.customerService.updateCustomer( customer.key , customer);
+    this.customerService.updateCustomer(customer.key, customer);
     this.snackBar.open('Employee update successful', 'OK', {
       duration: 2000,
     });

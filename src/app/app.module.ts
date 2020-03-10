@@ -51,6 +51,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { WykresComponent } from './wykres/wykres.component';
+import {ChartsModule} from 'ng2-charts';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 
 
@@ -72,6 +75,8 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
     NewCustomerComponent,
     NewCarComponent,
     EditCustomerComponent,
+    WykresComponent,
+    CustomerDetailComponent,
   ],
   imports: [
     FormsModule,
@@ -104,6 +109,7 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
     MatDialogModule,
     MatPaginatorModule,
     AngularFireDatabaseModule,
+    ChartsModule,
   ],
   providers: [CarService, CustomersService, LoginService],
   bootstrap: [AppComponent],
