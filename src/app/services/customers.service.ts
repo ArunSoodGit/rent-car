@@ -37,6 +37,9 @@ export class CustomersService {
     this.itemsRef.update(key, customer);
    // this.db.object('/customers/' + customer.key).update(customer);
   }
+  deleteCustomer(key: string, customer: Customer){
+    this.itemsRef.remove(key);
+  }
 
 }
 

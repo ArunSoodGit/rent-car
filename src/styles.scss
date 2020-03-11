@@ -1,16 +1,14 @@
+@import '~@angular/material/theming';
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
-html, body {
-  margin: 0;
-  height: 100%;
+// always include only once per project
+@include mat-core();
 
-  font-family: 'Open Sans', sans-serif;
+// import our custom theme
+@import 'theme.scss';
 
+// specify theme class eg: <body class="my-theme"> ... </body>
+.my-theme {
 
-
-}
-body{
-//background-image: url('/assets/img/tlo.jpg');
-  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
-
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($theme);
 }

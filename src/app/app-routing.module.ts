@@ -12,6 +12,12 @@ import {WykresComponent} from './wykres/wykres.component';
 
 
 const routes: Routes = [
+
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -42,11 +48,7 @@ const routes: Routes = [
   path: 'lista-klient',
   component: ListaKlientComponent
 },
-{
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-},
+
 {
   path: 'login',
   component: LoginComponent,

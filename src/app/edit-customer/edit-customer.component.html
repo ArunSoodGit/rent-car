@@ -1,42 +1,60 @@
 <div mat-dialog-content>
-  <form class="example-form">
+  <form #customerForm="ngForm" (ngSubmit)="customerForm.form.valid && onSubmit(data)" class="example-form">
+    <p>
   <mat-form-field>
-    <input type="text" matInput placeholder="Imię" [(ngModel)]="data.imie" name ="imie" required="true">
+    <mat-label>Imię</mat-label>
+    <input  matInput placeholder="Imię" [(ngModel)]="data.imie" name ="imie" required="true">
+    <mat-icon matSuffix >person</mat-icon>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="element">
     <input type="email" matInput placeholder="Nazwisko" [(ngModel)]="data.nazwisko" name ="nazwisko" required="true">
   </mat-form-field>
-  <mat-form-field>
-    <input type="email" matInput  [formControl]="emailFormControl" placeholder="Adres email" [(ngModel)]="data.email" name ="email" required="true">
+    </p>
+
+  <mat-form-field class="full">
+    <input  matInput  [formControl]="emailFormControl" placeholder="Adres email" [(ngModel)]="data.email" name ="email" required="true">
+    <mat-icon matSuffix >email</mat-icon>
   </mat-form-field>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Kraj" [(ngModel)]="data.kraj" name ="kraj" required="true">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Miasto" [(ngModel)]="data.miasto"  name ="miasto" required="true">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Ulica" [(ngModel)]="data.ulica" name ="ulica" required="true">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Nr. budynku" [(ngModel)]="data.nrBudynku" name ="nrBudynku" required="true">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Nr. lokalu" [(ngModel)]="data.nrLokalu" name ="nrLokalu" required="true">
-  </mat-form-field>
-  <mat-form-field>
+    <mat-form-field class="full">
+      <input type="tel" matInput placeholder="Nr. telefonu" [(ngModel)]="data.nrTelefonu" name ="NrTelefonu" required="true">
+      <mat-icon matSuffix >local_phone</mat-icon>
+    </mat-form-field>
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Kraj" [(ngModel)]="data.kraj" name ="kraj" required="true">
+        <mat-icon matSuffix >location_on</mat-icon>
+      </mat-form-field>
+      <mat-form-field class="element">
+        <input type="text" matInput placeholder="Miasto" [(ngModel)]="data.miasto"  name ="miasto" required="true">
+      </mat-form-field>
+    </p>
+ <p>
+   <mat-form-field>
+     <input type="text" matInput placeholder="Ulica" [(ngModel)]="data.ulica" name ="ulica" required="true">
+     <mat-icon matSuffix >home</mat-icon>
+   </mat-form-field>
+   <mat-form-field class="element">
+     <input type="text" matInput placeholder="Nr. budynku" [(ngModel)]="data.nrBudynku" name ="nrBudynku" required="true">
+   </mat-form-field >
+   <mat-form-field class="full">
+     <input type="text" matInput placeholder="Nr. lokalu" [(ngModel)]="data.nrLokalu" name ="nrLokalu" required="true">
+   </mat-form-field>
+ </p>
+<p>
+  <mat-form-field >
     <input type="text" matInput placeholder="Nr. prawa jazdy" [(ngModel)]="data.nrPrawaJazdy" name ="NrPrawaJazdy" required="true">
+    <mat-icon matSuffix >credit_card</mat-icon>
   </mat-form-field>
-  <mat-form-field class="firstName">
+  <mat-form-field class="element">
     <input type="number" matInput placeholder="Pesel" [(ngModel)]="data.pesel" name ="pesel" required="true">
   </mat-form-field>
-  <mat-form-field class="firstName">
-    <input type="tel" matInput placeholder="Nr. telefonu" [(ngModel)]="data.nrTelefonu" name ="NrTelefonu" required="true">
-  </mat-form-field>
+
+</p>
+
   </form>
 </div>
 <div mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="onSubmit(data)">Edytuj</button>
+  <button mat-raised-button color="primary" (click)="onSubmit(data)" cdkFocusInitial  [disabled]="!customerForm.form.valid">Edytuj</button>
 </div>
 
 

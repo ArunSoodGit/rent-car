@@ -17,10 +17,10 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./lista-klient.component.scss']
 })
 export class ListaKlientComponent implements OnInit {
-  displayedColumns: string[] = ['imię', 'nazwisko', 'email', 'nrTelefonu', 'pesel', 'nrPrawaJazdy', 'kraj', 'miasto', 'ulica', 'nrBudynku', 'nrLokalu' ,'edit'];
+  displayedColumns: string[] = ['imię', 'nazwisko', 'email', 'nrTelefonu', 'pesel', 'nrPrawaJazdy', 'kraj', 'miasto', 'ulica', 'nrBudynku', 'nrLokalu', 'edit'];
 
   dataSource;
-   customer;
+  customer;
   searchKey: string;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -28,7 +28,6 @@ export class ListaKlientComponent implements OnInit {
 
   constructor(private customerService: CustomersService, private router: Router, private dialog: MatDialog) {
   }
-
 
 
   ngOnInit() {
@@ -39,22 +38,24 @@ export class ListaKlientComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     });
   }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   onCreate() {
-const dialogRef = this.dialog.open(NewCustomerComponent,{
-  width: '700px'
-});
-
-
-
+    const dialogRef = this.dialog.open(NewCustomerComponent, {
+      width: '500px'
+    });
   }
+  onDelete(customer) {
+  this.customerService.deleteCustomer(customer.key, customer);
+}
+
   onUpdate(customer) {
     const dialogRef = this.dialog.open(EditCustomerComponent, {
-      width: '700px',
+      width: '500px',
       data: customer
     });
 
@@ -64,11 +65,11 @@ const dialogRef = this.dialog.open(NewCustomerComponent,{
   }
 
 
-
   onSearchClear() {
     this.searchKey = '';
     this.applyFilter2();
   }
+
   applyFilter2() {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }

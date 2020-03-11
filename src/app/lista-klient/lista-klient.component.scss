@@ -18,7 +18,8 @@ table ,mat-paginator{
   }
 }
 .rows:hover{
-  background: #E8EAF6;
+  background: rgb(81, 81, 81);
+
 }
 
 nav {
@@ -62,3 +63,6 @@ nav ul li a:hover {
   margin-left: 20px;
 }
 
+.delete:hover{
+  color: red;
+}
